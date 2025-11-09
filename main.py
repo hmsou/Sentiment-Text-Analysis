@@ -1,16 +1,19 @@
 from textblob import TextBlob
 from newspaper import Article
-import nltk
-nltk.download('punkt_tab')
+# import nltk
+# nltk.download('punkt_tab')
 
-url = "https://en.wikipedia.org/wiki/Neural_network_(machine_learning)"
-article = Article(url)
-# url2 = "https://g1.globo.com/jornal-nacional/noticia/2025/11/08/moradores-relatam-desespero-apos-tornado-destruir-cidade-no-interior-do-parana.ghtml"
-# article2 = Article(url2)
+# url = "https://en.wikipedia.org/wiki/Neural_network_(machine_learning)"
+# article = Article(url)
+# article.download()
+# article.parse()
+# article.nlp()
+# text = article.summary
+# print(text)
 
-article.download()
-article.parse()
-article.nlp()
+with open('NegativeReview.txt', 'r') as f:
+    text = f.read()
 
-text = article.text
-print(text)
+blob = TextBlob(text)
+sentiment = blob.sentiment # polarity -1 to 1
+print(sentiment)
