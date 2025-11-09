@@ -11,7 +11,7 @@ from newspaper import Article
 # text = article.summary
 # print(text)
 
-with open('NegativeReview.txt', 'r') as f:
+with open('PositiveReview.txt', 'r') as f:
     text = f.read()
 
 blob = TextBlob(text)
